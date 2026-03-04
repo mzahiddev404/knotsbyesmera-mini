@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Knots by Esmera Mini</title>
+    <meta
+      name="description"
+      content="Knots by Esmera Mini — handmade earrings, a quick product preview, a tiny contest, and a working contact form."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/favicon.ico" />
+
+    <script src="script.js" defer></script>
+  </head>
+
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="Knots by Esmera Mini home">
+          <span class="brand-mark" aria-hidden="true">◎</span>
+          <span class="brand-name">Knots by Esmera Mini</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#cart">Cart</a></li>
+            <li><a href="#game">Contest</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="themeToggle" class="theme-toggle" type="button">
+          Light / Dark
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="wrap hero-inner">
+          <div class="hero-textbox">
+            <h1 id="heroTitle">Small batch earrings, made simple.</h1>
+            <p class="hero-text">
+              Crochet + beads, lightweight and easy to wear. This is a smaller “mini” version.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#products">See products</a>
+              <a class="btn btn-ghost" href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <img
+              src="img/earring-cat-model-01.jpg"
+              alt="Model wearing handmade earrings"
+              class="hero-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="wrap">
+          <h2>About</h2>
+          <p class="lead">
+            Knots by Esmera Mini is a small one-page site to show a few best-selling earrings,
+            a simple cart total, and a working contact form.
+          </p>
+        </div>
+      </section>
+
+      <section id="products" class="section">
+        <div class="wrap">
+          <h2>Featured Products</h2>
+          <p class="subtext">Click a tab to swap the product shown. Only one product displays at a time.</p>
+
+          <div class="tabs" role="tablist" aria-label="Product picker">
+            <button
+              type="button"
+              class="tab active"
+              role="tab"
+              id="tab-leaf"
+              aria-selected="true"
+              aria-controls="panel-product"
+              data-product="leaf"
+            >
+              Leaf
+            </button>
+
+            <button
+              type="button"
+              class="tab"
+              role="tab"
+              id="tab-pink"
+              aria-selected="false"
+              aria-controls="panel-product"
+              data-product="pink"
+            >
+              Pink
+            </button>
+
+            <button
+              type="button"
+              class="tab"
+              role="tab"
+              id="tab-starfish"
+              aria-selected="false"
+              aria-controls="panel-product"
+              data-product="starfish"
+            >
+              Starfish
+            </button>
+          </div>
+
+          <div
+            id="panel-product"
+            class="product-panel"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="tab-leaf"
+          >
+            <!-- JS replaces this -->
+          </div>
+        </div>
+      </section>
+
+      <section id="cart" class="section">
+        <div class="wrap">
+          <h2>Quick Cart</h2>
+          <p class="subtext">Add/remove items and the total updates right away.</p>
+
+          <div class="cart-grid">
+            <div class="cart-items" id="cartItems"></div>
+
+            <aside class="cart-summary" aria-label="Cart summary">
+              <h3>Summary</h3>
+
+              <p><span>Subtotal</span> <strong id="subTotal">$0.00</strong></p>
+              <p><span>Tax (7%)</span> <strong id="taxTotal">$0.00</strong></p>
+              <p><span>Shipping (1%)</span> <strong id="shipTotal">$0.00</strong></p>
+              <p class="cart-total"><span>Total</span> <strong id="grandTotal">$0.00</strong></p>
+
+              <button id="checkoutBtn" class="btn" type="button">Checkout</button>
+              <button id="clearBtn" class="btn btn-ghost" type="button">Clear cart</button>
+
+              <p id="cartMsg" class="msg" aria-live="polite"></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="game" class="section">
+        <div class="wrap">
+          <h2>Tiny Contest</h2>
+          <p class="subtext">Guess a number from 1 to 10. If it matches, you win.</p>
+
+          <div class="card">
+            <div class="field">
+              <label for="guessInput">Your guess (1–10)</label>
+              <input id="guessInput" type="number" min="1" max="10" inputmode="numeric" />
+              <span class="error" id="guessError" aria-live="polite"></span>
+            </div>
+
+            <button class="btn" id="playBtn" type="button">Play</button>
+
+            <div class="game-results" aria-live="polite">
+              <p><strong>You guessed:</strong> <span id="userGuessOut">—</span></p>
+              <p><strong>Random number:</strong> <span id="randOut">—</span></p>
+              <p id="gameMsg" class="msg"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="wrap">
+          <h2>Contact</h2>
+          <p class="subtext">
+            Name + comments required. Pick email or phone and that one becomes required too.
+          </p>
+
+          <form id="contactForm" class="card" novalidate>
+            <div class="two-col">
+              <div class="field">
+                <label for="fullName">Full name *</label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" />
+                <span class="error" id="nameError" aria-live="polite"></span>
+              </div>
+
+              <fieldset class="field">
+                <legend>Preferred contact *</legend>
+
+                <div class="radio-box">
+                  <div class="radio-row">
+                    <input type="radio" id="prefEmail" name="prefContact" value="email" />
+                    <label for="prefEmail">Email</label>
+                  </div>
+
+                  <div class="radio-row">
+                    <input type="radio" id="prefPhone" name="prefContact" value="phone" />
+                    <label for="prefPhone">Phone</label>
+                  </div>
+                </div>
+
+                <span class="error" id="prefError" aria-live="polite"></span>
+              </fieldset>
+            </div> <!-- ✅ CLOSES first two-col -->
+
+            <div class="two-col">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" />
+                <span class="error" id="emailError" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" />
+                <span class="error" id="phoneError" aria-live="polite"></span>
+              </div>
+            </div> <!-- ✅ CLOSES second two-col -->
+
+            <div class="field">
+              <label for="comments">Comments *</label>
+              <textarea id="comments" name="comments" rows="4"></textarea>
+              <span class="error" id="commentsError" aria-live="polite"></span>
+            </div>
+
+            <button class="btn" type="submit">Send</button>
+
+            <p id="submitMsg" class="msg" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p class="footer-title">Knots by Esmera Mini</p>
+        <p class="footer-text">Brooklyn, NY · contact@knotsbyesmera.com · (555) 123-4567</p>
+        <p class="footer-small">© 2026 Knots by Esmera Mini</p>
+      </div>
+    </footer>
+  </body>
+</html>
